@@ -1,6 +1,7 @@
 import { useRouter } from "expo-router";
 import React, { useState } from "react";
-import { Button, Text, TextInput, View } from "react-native";
+import { Text, TextInput, View } from "react-native";
+import { Button } from "react-native-paper";
 import { upsertObservation } from "../src/domain/repo";
 import SeverityPicker from "../src/ui/SeverityPicker";
 
@@ -43,7 +44,15 @@ export default function NewScreen() {
         }}
       />
 
-      <Button title="Guardar" onPress={handleSave} />
+      <Button
+  mode="contained"
+  icon="content-save"
+  onPress={handleSave}
+  style={{ marginTop: 12, borderRadius: 10, paddingVertical: 4 }}
+  labelStyle={{ fontSize: 16, fontWeight: "600" }}
+>
+  Guardar
+</Button>
     </View>
   );
 }
